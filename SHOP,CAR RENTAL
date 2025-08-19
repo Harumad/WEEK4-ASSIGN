@@ -1,0 +1,89 @@
+// // AASIGNMENT WEEK ASSINMENT
+class Human{
+  constructor(name,age){
+    this.name= name
+    this.age= age
+   
+  }
+
+  talk(){
+    console.log(`${this.name} speaks `)
+   
+  }
+  
+}
+class Man extends Human {
+
+}
+
+
+
+const person1 =new Human('Haruna Mohammed',30, 'Tuba')
+person1.talk();
+
+const man1 = new Man(`Haruna Mohammed`,30)
+man1.talk();
+
+// 1. Student Report
+let students3={
+  name:'Kayzier',
+  age:20,
+  grade:'3rd grade',
+  subjects:['maths','english','science']
+
+}
+
+console.log(students3.name,students3.age, students3.grade, students3.subjects);
+
+
+
+// Online Store Product
+let product = {name:'laptop',
+              price:30,
+              stock:60 ,
+              category:'dell brand',
+}
+function purchaseProducts  (amount) {
+  if (amount<= product.stock ) {
+  product.stock -= amount;
+  console.log(`You bought ${amount} ${product.name} (s)`)
+  console.log(`Remaining stock:${product.stock}`)
+
+ } else { 
+  console.log ('out of stock')
+ }
+
+}
+purchaseProducts(55);
+purchaseProducts(2);
+purchaseProducts(3);
+
+
+let cars = [
+  {brand:"Toyota", model:"corolla", year:2023, available:true},
+  {brand:"Benze", model:"c-class", year:2024, available:true},
+  {brand:"Honda", model:"cr-v", year:2024, available:true},
+  {brand:"Hyundai", model:"elantra", year:2025, available:true}
+];
+
+function rentCar(brand, model) {
+  // find a car that matches brand and model
+  let car = cars.find(c => c.brand === brand && c.model === model);
+
+  if (car) {
+    if (car.available) {
+      car.available = false;
+      console.log(`${car.brand} ${car.model} Rented Out`);
+    } else {
+      console.log(`${car.brand} ${car.model}  available`);
+    }
+  } else {
+    console.log(`${brand} ${model} not found`);
+  }
+}
+
+// calling the function
+rentCar("Toyota","corolla");
+rentCar("Hyundai","elantra");
+rentCar("Honda","hr-v");
+
